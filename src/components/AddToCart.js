@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import CartItems from './CartItems'
 import { Link } from 'react-router-dom'
 import { clearCart } from '../utils/cartSlice'
+import { useState } from 'react'
 
 
 const AddToCart = () => {
@@ -11,8 +12,8 @@ const AddToCart = () => {
   
      const handleClearCart=()=>{
          dispatch(clearCart())
-     }
-     
+     } 
+
   return (
     <>
     <div className='flex justify-center border border-black p-2'>
@@ -26,6 +27,9 @@ const AddToCart = () => {
           {items.map((item)=><CartItems item={item}/>)}
           </div>
           </div>
+    {/* <div className=' flex justify-center'>
+        <div className='font-bold text-3xl w-fit'>Subtotal: {setTotal(item.price*item.quantity)}</div>
+    </div> */}
     </>
   )
 }
